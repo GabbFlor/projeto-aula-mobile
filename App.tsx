@@ -1,6 +1,7 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from './src/screens/Home';
 import { NavigationContainer } from '@react-navigation/native';
+import { Image, StyleSheet } from 'react-native';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 import AntDesign from '@expo/vector-icons/AntDesign';
@@ -13,6 +14,14 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator
         screenOptions={{
+          headerRight: () => (
+            <Image
+              style={styles.logoHeader}
+              source={require("./assets/icone-loja.png")}
+              resizeMode="contain"
+            />
+          ),
+
           headerStyle: {
             backgroundColor: "#8F5ED6"
           },
@@ -70,3 +79,11 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  logoHeader: {
+    height: 50,
+    width: 50,
+    marginRight: 10
+  }
+})
