@@ -1,5 +1,5 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Home from './src/screens/Home';
+import Home from './src/screens/home/Home';
 import { NavigationContainer } from '@react-navigation/native';
 import { Image, StyleSheet } from 'react-native';
 
