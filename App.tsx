@@ -1,11 +1,12 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from './src/screens/Home';
-import Test from './src/screens/Test';
 import { NavigationContainer } from '@react-navigation/native';
-import { Ionicons } from '@expo/vector-icons';
+
+import Ionicons from '@expo/vector-icons/Ionicons';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default function App() {
-
   const Drawer = createDrawerNavigator();
 
   return (
@@ -15,7 +16,6 @@ export default function App() {
           headerStyle: {
             backgroundColor: "#8F5ED6"
           },
-          headerTintColor: "#000000",
           headerTitleStyle: {
             fontWeight: "regular"
           },
@@ -23,9 +23,11 @@ export default function App() {
             backgroundColor: '#774eb0',
             width: 275,
           },
+          headerTintColor: "#000000",
           overlayColor: "#905ed62a",
           drawerActiveBackgroundColor: "#5e3d8c",
-          drawerActiveTintColor: "white"
+          drawerActiveTintColor: "#fff",
+          drawerInactiveTintColor: "#000000"
         }}
       >
         <Drawer.Screen 
@@ -38,8 +40,31 @@ export default function App() {
           }}
         />
         <Drawer.Screen 
-          name='Teste' 
-          component={Test} 
+          name='Produtos' 
+          component={Home} 
+          options={{
+            drawerIcon: ({ size, color }) => (
+              <AntDesign name="product" size={size} color={color} />
+            ),
+          }}
+        />
+        <Drawer.Screen 
+          name='Contato' 
+          component={Home} 
+          options={{
+            drawerIcon: ({ size, color }) => (
+              <AntDesign name="phone" size={size} color={color} />
+            ),
+          }}
+        />
+        <Drawer.Screen 
+          name='Encomendas' 
+          component={Home} 
+          options={{
+            drawerIcon: ({ size, color }) => (
+              <MaterialCommunityIcons name="truck-delivery" size={size} color={color} />
+            ),
+          }}
         />
       </Drawer.Navigator>
     </NavigationContainer>
