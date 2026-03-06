@@ -8,7 +8,8 @@ const GlobalStyle = StyleSheet.create({
   main: {
     flex: 1,
     backgroundColor: "#36134f",
-    padding: spacing.md
+    padding: spacing.md,
+    alignItems: "center"
   }
 })
 
