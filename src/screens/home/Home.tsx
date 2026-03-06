@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, Text, ScrollView, Image, FlatList } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import GlobalStyle from "../../styles/GlobalStyle";
 import Style from "./Style";
@@ -6,7 +6,7 @@ import MapView, { Marker } from "react-native-maps";
 
 export default function Home() {
     return (
-        <SafeAreaView style={{ flex: 1 }} edges={['left','right','bottom']}>
+        <SafeAreaView style={Style.body} edges={['left','right','bottom']}>
             <ScrollView>
                 <View style={Style.div_banner}>
                     <Image 
@@ -18,9 +18,9 @@ export default function Home() {
                 
                 <View style={GlobalStyle.main}>
                     <View style={Style.div_texto}>
-                        <Text style={Style.titulo}>🌟 Sobre nós 🌟</Text>
+                        <Text style={GlobalStyle.titulo}>🌟 Sobre nós 🌟</Text>
 
-                        <Text style={Style.texto}>
+                        <Text style={GlobalStyle.texto}>
                             A Loja do Florindo surgiu da paixão por tecnologia e montagem de 
                             computadores, que começou como um hobby ajudando amigos e familiares. 
                             Com o tempo, percebemos a dificuldade das pessoas em encontrar peças 
@@ -30,8 +30,8 @@ export default function Home() {
                         </Text>
                     </View>
 
-                    <View>
-                        <Text style={Style.titulo}>📌 Onde estamos? 📌</Text>
+                    <View style={Style.div_texto}>
+                        <Text style={GlobalStyle.titulo}>📌 Onde estamos? 📌</Text>
 
                         <View style={Style.div_map}>
                             <MapView
@@ -53,6 +53,45 @@ export default function Home() {
                                 />
                             </MapView>
                         </View>
+                    </View>
+
+                    <View style={Style.div_cards}>
+                        <Text style={GlobalStyle.titulo}>❓ Detalhes da empresa ❓</Text>
+                        <ScrollView style={Style.cardView} horizontal showsHorizontalScrollIndicator={false}>
+                            <View style={[Style.card, {marginRight: 30}]}>
+                                <Text style={GlobalStyle.subTitulo}>Serviços oferecidos</Text>
+
+                                <Text style={GlobalStyle.texto}>
+                                    Na Loja do Florindo, oferecemos consultoria para montar ou melhorar seu setup, 
+                                    ajudando a escolher as melhores peças conforme sua necessidade e orçamento. 
+                                    Também realizamos montagem, manutenção e orientações para upgrades no seu PC.
+                                </Text>
+                            </View>
+
+                            <View style={[Style.card, {marginRight: 30}]}>
+                                <Text style={GlobalStyle.subTitulo}>Serviços oferecidos</Text>
+
+                                <Text style={GlobalStyle.texto}>
+                                    Na Loja do Florindo, oferecemos consultoria para montar ou melhorar seu setup, 
+                                    ajudando a escolher as melhores peças conforme sua necessidade e orçamento. 
+                                    Também realizamos montagem, manutenção e orientações para upgrades no seu PC.
+                                </Text>
+                            </View>
+
+                            <View style={Style.card}>
+                                <Text style={GlobalStyle.subTitulo}>Serviços oferecidos</Text>
+
+                                <Text style={GlobalStyle.texto}>
+                                    Na Loja do Florindo, oferecemos consultoria para montar ou melhorar seu setup, 
+                                    ajudando a escolher as melhores peças conforme sua necessidade e orçamento. 
+                                    Também realizamos montagem, manutenção e orientações para upgrades no seu PC.
+                                </Text>
+                            </View>
+                        </ScrollView>
+                    </View>
+
+                    <View style={Style.div_texto}>
+                        <Text style={GlobalStyle.titulo}>📼 Vídeo sobre a empresa 📼</Text>
                     </View>
                 </View>
             </ScrollView>
