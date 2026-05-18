@@ -3,11 +3,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import GlobalStyle from "../../styles/GlobalStyle";
 import Style from "./Style";
 import MapView, { Marker } from "react-native-maps";
+import YoutubePlayer from "react-native-youtube-iframe";
 
 export default function Home() {
     return (
         <SafeAreaView style={Style.body} edges={['left','right','bottom']}>
-            <ScrollView>
+            <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 40 }}>
                 <View style={Style.div_banner}>
                     <Image 
                         source={require("../../../assets/banner-top.png")} 
@@ -57,7 +58,7 @@ export default function Home() {
 
                     <View style={Style.div_cards}>
                         <Text style={GlobalStyle.titulo}>❓ Detalhes da empresa ❓</Text>
-                        <ScrollView style={Style.cardView} horizontal showsHorizontalScrollIndicator={false}>
+                        <ScrollView style={Style.cardView} horizontal showsHorizontalScrollIndicator={true}>
                             <View style={[Style.card, {marginRight: 30}]}>
                                 <Text style={GlobalStyle.subTitulo}>Serviços oferecidos</Text>
 
@@ -91,7 +92,16 @@ export default function Home() {
                     </View>
 
                     <View style={Style.div_texto}>
-                        <Text style={GlobalStyle.titulo}>📼 Vídeo sobre a empresa 📼</Text>
+                        <Text style={GlobalStyle.titulo}>📼 Vídeo sobre empresa 📼</Text>
+
+                        <View style={Style.div_video}>
+                            <YoutubePlayer
+                                height={220}
+                                width={"97.5%"}
+                                play={false}
+                                videoId={"jfKfPfyJRdk"}
+                            />
+                        </View>
                     </View>
                 </View>
             </ScrollView>

@@ -43,7 +43,8 @@ const Style = StyleSheet.create({
         overflow: "hidden",
     },
     div_cards: {
-        marginBottom: 50
+        marginBottom: 50,
+        height: 270
     },
     cardView: {
         marginTop: 20,
@@ -51,6 +52,12 @@ const Style = StyleSheet.create({
     card: {
         // subtraindo o padding da direita e esquerda da tela q eu coloquei no globalStyle
         width: screenWidth - (spacing.md * 2)
+    },
+    div_video: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        marginTop: 10
     }
 })
 
