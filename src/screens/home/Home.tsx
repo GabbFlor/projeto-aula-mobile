@@ -8,7 +8,7 @@ import YoutubePlayer from "react-native-youtube-iframe";
 export default function Home() {
     return (
         <SafeAreaView style={Style.body} edges={['left','right','bottom']}>
-            <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 40 }}>
+            <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 0 }}>
                 <View style={Style.div_banner}>
                     <Image 
                         source={require("../../../assets/banner-top.png")} 
@@ -17,7 +17,7 @@ export default function Home() {
                     />
                 </View>
                 
-                <View style={GlobalStyle.main}>
+                <View style={[GlobalStyle.main, {paddingBottom: 0}]}>
                     <View style={Style.div_texto}>
                         <Text style={GlobalStyle.titulo}>🌟 Sobre nós 🌟</Text>
 
@@ -94,7 +94,8 @@ export default function Home() {
                     <View style={Style.div_texto}>
                         <Text style={GlobalStyle.titulo}>📼 Vídeo sobre empresa 📼</Text>
 
-                        <View style={Style.div_video}>
+                        {/* sando YoutubePlayer no lugar no useVideoPlayer pq o meu vídeo é uma live do yt */}
+                        <View style={[Style.div_video, {marginBottom: 0}]}>
                             <YoutubePlayer
                                 height={220}
                                 width={"97.5%"}
