@@ -100,7 +100,7 @@ export default function Home() {
                                 height={220}
                                 width={"97.5%"}
                                 play={false}
-                                videoId={"jfKfPfyJRdk"}
+                                videoId={"53gNFOqDFcE"}
                             />
                         </View>
                     </View>
