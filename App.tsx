@@ -6,6 +6,7 @@ import { Image, StyleSheet } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import Produtos from './src/screens/produtos/Produtos';
 
 export default function App() {
   const Drawer = createDrawerNavigator();
@@ -50,7 +51,7 @@ export default function App() {
         />
         <Drawer.Screen 
           name='Produtos' 
-          component={Home} 
+          component={Produtos} 
           options={{
             drawerIcon: ({ size, color }) => (
               <AntDesign name="product" size={size} color={color} />

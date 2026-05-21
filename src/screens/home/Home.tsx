@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image, FlatList } from "react-native";
+import { View, Text, ScrollView, Image } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import GlobalStyle from "../../styles/GlobalStyle";
 import Style from "./Style";
