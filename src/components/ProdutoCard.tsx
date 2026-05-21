@@ -4,6 +4,7 @@ import Style from "../screens/produtos/Syle";
 
 // interface por viadagem do typescript
 interface ProdutoCardProps {
+    id: number,
     nome: string;
     tipo: string;
     descricao: string;
@@ -11,10 +12,10 @@ interface ProdutoCardProps {
     imagem: ImageSourcePropType,
 
     // função para funcionar como callback para abrir o modal no componente pai
-    onClick: () => void
+    onClick: (id:number) => void
 }
 
-export default function ProdutoCard({ nome, tipo, descricao, valor, imagem, onClick }:ProdutoCardProps) {
+export default function ProdutoCard({ id, nome, tipo, descricao, valor, imagem, onClick }:ProdutoCardProps) {
     return <Card mode="contained" style={Style.card}>
                 <Card.Cover source={imagem} style={Style.cardImage}/>
                 <Card.Content style={Style.cardContent}>
@@ -22,7 +23,7 @@ export default function ProdutoCard({ nome, tipo, descricao, valor, imagem, onCl
                     <Text style={[Style.geralText, Style.normalText]}>{descricao}</Text>
                     <Text style={Style.priceText}>R$ {valor.toFixed(2).replace('.', ',')} / cada</Text>
 
-                    <TouchableOpacity style={Style.btn} onPress={onClick}>
+                    <TouchableOpacity style={Style.btn} onPress={() => onClick(id)}>
                         <Text style={Style.btnText}>Ver mais</Text>
                     </TouchableOpacity>
                 </Card.Content>
