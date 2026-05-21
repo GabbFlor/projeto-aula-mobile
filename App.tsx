@@ -7,6 +7,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import Produtos from './src/screens/produtos/Produtos';
+import Perfil from './src/screens/perfil/Perfil';
 
 export default function App() {
   const Drawer = createDrawerNavigator();
@@ -59,20 +60,11 @@ export default function App() {
           }}
         />
         <Drawer.Screen 
-          name='Contato' 
-          component={Home} 
+          name='Perfil' 
+          component={Perfil} 
           options={{
             drawerIcon: ({ size, color }) => (
-              <AntDesign name="phone" size={size} color={color} />
-            ),
-          }}
-        />
-        <Drawer.Screen 
-          name='Encomendas' 
-          component={Home} 
-          options={{
-            drawerIcon: ({ size, color }) => (
-              <MaterialCommunityIcons name="truck-delivery" size={size} color={color} />
+              <MaterialCommunityIcons name="account" size={size} color={color} />
             ),
           }}
         />

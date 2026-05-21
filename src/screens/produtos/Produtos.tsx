@@ -24,8 +24,6 @@ export default function Produtos() {
     const handleOpenModal = (id:number) => {
         const produtoEncontrado = produtos.find(item => item.id === id);
 
-        console.log(produtoEncontrado)
-
         if (produtoEncontrado) {
             setProdutoSelecionado(produtoEncontrado);
             setModal(true);
